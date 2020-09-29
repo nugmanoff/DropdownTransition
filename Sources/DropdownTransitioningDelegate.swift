@@ -49,6 +49,7 @@ final class DropdownPresentingAnimationController: NSObject, UIViewControllerAni
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let presentedViewController = transitionContext.viewController(forKey: .to),
+            let presentingViewController = transitionContext.viewController(forKey: .from),
             let toView = transitionContext.view(forKey: .to) else { return }
         let containerView = transitionContext.containerView
         let navigationBarY: CGFloat = getStatusBarHeight() + Constants.navigationBarHeight
@@ -58,6 +59,9 @@ final class DropdownPresentingAnimationController: NSObject, UIViewControllerAni
                                                   withHorizontalFittingPriority: .required,
                                                   verticalFittingPriority: .defaultLow)
         containerView.addSubview(toView)
+        if let navigationBar = (presentingViewController as? UINavigationController)?.navigationBar {
+            containerView.addSubview(navigationBar)
+        }
         toView.frame = CGRect(x: 0, y: containerView.frame.minY - size.height, width: finalFrame.width, height: size.height)
         UIView.animate(withDuration: transitionDuration(using: transitionContext),
                        delay: 0,
@@ -78,7 +82,8 @@ final class DropdownDismissingAnimationController: NSObject, UIViewControllerAni
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromView = transitionContext.view(forKey: .from) else { return }
+        guard let fromView = transitionContext.view(forKey: .from),
+            let presentedViewController = transitionContext.viewController(forKey: .to) else { return }
         let containerView = transitionContext.containerView
         let finalFrame = CGRect(x: 0, y: containerView.frame.minY - fromView.bounds.height, width: fromView.bounds.width, height: fromView.bounds.height)
         UIView.animate(withDuration: transitionDuration(using: transitionContext),
@@ -87,10 +92,13 @@ final class DropdownDismissingAnimationController: NSObject, UIViewControllerAni
                        initialSpringVelocity: 1,
                        options: .curveEaseOut,
                        animations: {
-                           fromView.frame = finalFrame
+                        fromView.frame = finalFrame
                        }, completion: { finished in
-                           fromView.removeFromSuperview()
-                           transitionContext.completeTransition(finished)
+                        fromView.removeFromSuperview()
+                        if let navigationBar = (presentedViewController as? UINavigationController)?.navigationBar {
+                            presentedViewController.view.addSubview(navigationBar)
+                        }
+                        transitionContext.completeTransition(finished)
         })
     }
 }
