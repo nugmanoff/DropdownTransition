@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="172" id="Gew-HR-ZpF" customClass="ChatFolderCell" customModule="Dropdown" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gew-HR-ZpF" id="YDJ-Ut-NCe">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-Nf-CMQ">
+                        <rect key="frame" x="82" y="42" width="132" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08t-o9-Dfb">
+                        <rect key="frame" x="16" y="29" width="50" height="50"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="PiW-P9-yGn"/>
+                            <constraint firstAttribute="height" constant="50" id="o56-jD-Eva"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uaQ-11-qfj">
+                        <rect key="frame" x="30" y="43" width="22" height="22"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="Ivo-02-Om6"/>
+                            <constraint firstAttribute="height" constant="22" id="sCj-yz-lMW"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="325-Z7-mdQ">
+                        <rect key="frame" x="324.5" y="44" width="53.5" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.62352941176470589" green="0.6470588235294118" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-VR-WVs">
+                        <rect key="frame" x="386" y="46" width="12" height="16.5"/>
+                        <color key="tintColor" red="0.62352941179999999" green="0.64705882349999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="VoW-Q3-TBy"/>
+                            <constraint firstAttribute="width" constant="12" id="YuV-Kv-fma"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uaQ-11-qfj" firstAttribute="centerX" secondItem="08t-o9-Dfb" secondAttribute="centerX" id="05y-5l-eql"/>
+                    <constraint firstItem="dlX-Nf-CMQ" firstAttribute="leading" secondItem="08t-o9-Dfb" secondAttribute="trailing" constant="16" id="1kg-Un-rTA"/>
+                    <constraint firstItem="dlX-Nf-CMQ" firstAttribute="centerY" secondItem="YDJ-Ut-NCe" secondAttribute="centerY" id="1mE-hE-sv0"/>
+                    <constraint firstItem="9ac-VR-WVs" firstAttribute="leading" secondItem="325-Z7-mdQ" secondAttribute="trailing" constant="8" id="2Ob-Gh-XZg"/>
+                    <constraint firstAttribute="trailing" secondItem="9ac-VR-WVs" secondAttribute="trailing" constant="16" id="8dC-YA-Mvy"/>
+                    <constraint firstItem="9ac-VR-WVs" firstAttribute="centerY" secondItem="YDJ-Ut-NCe" secondAttribute="centerY" id="EbK-3T-brU"/>
+                    <constraint firstItem="325-Z7-mdQ" firstAttribute="centerY" secondItem="YDJ-Ut-NCe" secondAttribute="centerY" id="SZE-rt-cdN"/>
+                    <constraint firstItem="08t-o9-Dfb" firstAttribute="centerY" secondItem="YDJ-Ut-NCe" secondAttribute="centerY" id="Zgg-kX-J9R"/>
+                    <constraint firstItem="uaQ-11-qfj" firstAttribute="centerY" secondItem="08t-o9-Dfb" secondAttribute="centerY" id="hwg-ig-lBc"/>
+                    <constraint firstItem="08t-o9-Dfb" firstAttribute="leading" secondItem="YDJ-Ut-NCe" secondAttribute="leading" constant="16" id="o8Z-kG-bce"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="annotationLabel" destination="325-Z7-mdQ" id="dJF-5Y-YrX"/>
+                <outlet property="chevronImageView" destination="9ac-VR-WVs" id="tj4-Tb-hLH"/>
+                <outlet property="iconImageBackgroundView" destination="08t-o9-Dfb" id="0BM-im-MRd"/>
+                <outlet property="iconImageView" destination="uaQ-11-qfj" id="Kg7-Ay-t2j"/>
+                <outlet property="titleLabel" destination="dlX-Nf-CMQ" id="hrk-N9-DHI"/>
+            </connections>
+            <point key="canvasLocation" x="-33.333333333333336" y="-216.96428571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+    </resources>
+</document>

@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25273AB92525EAF50058DC4A /* ChatFolderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273AB82525EAF50058DC4A /* ChatFolderListViewController.swift */; };
+		25273ABD2525F2660058DC4A /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25273ABC2525F2660058DC4A /* ChatCell.xib */; };
+		25273ABF2525F26F0058DC4A /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273ABE2525F26F0058DC4A /* ChatCell.swift */; };
+		25273AC32525F2C80058DC4A /* ChatFolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273AC22525F2C80058DC4A /* ChatFolderCell.swift */; };
+		25273AC52525F2DD0058DC4A /* ChatFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */; };
+		25273ACA2525FEC40058DC4A /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273AC92525FEC40058DC4A /* ChatViewModel.swift */; };
+		25273ACC2525FF0A0058DC4A /* ChatFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */; };
 		25B5223425235FD600DBC563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223325235FD600DBC563 /* AppDelegate.swift */; };
 		25B5223625235FD600DBC563 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223525235FD600DBC563 /* SceneDelegate.swift */; };
-		25B5223825235FD600DBC563 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223725235FD600DBC563 /* ViewController.swift */; };
+		25B5223825235FD600DBC563 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223725235FD600DBC563 /* ChatListViewController.swift */; };
 		25B5223B25235FD600DBC563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B5223925235FD600DBC563 /* Main.storyboard */; };
 		25B5223D25235FD700DBC563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B5223C25235FD700DBC563 /* Assets.xcassets */; };
 		25B5224025235FD700DBC563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B5223E25235FD700DBC563 /* LaunchScreen.storyboard */; };
@@ -18,10 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25273AB82525EAF50058DC4A /* ChatFolderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFolderListViewController.swift; sourceTree = "<group>"; };
+		25273ABC2525F2660058DC4A /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		25273ABE2525F26F0058DC4A /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		25273AC22525F2C80058DC4A /* ChatFolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFolderCell.swift; sourceTree = "<group>"; };
+		25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFolderCell.xib; sourceTree = "<group>"; };
+		25273AC92525FEC40058DC4A /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFolderViewModel.swift; sourceTree = "<group>"; };
 		25B5223025235FD600DBC563 /* Dropdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dropdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B5223325235FD600DBC563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25B5223525235FD600DBC563 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		25B5223725235FD600DBC563 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25B5223725235FD600DBC563 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		25B5223A25235FD600DBC563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25B5223C25235FD700DBC563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25B5223F25235FD700DBC563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +55,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25273ABA2525EAFB0058DC4A /* ChatFolderList */ = {
+			isa = PBXGroup;
+			children = (
+				25273AB82525EAF50058DC4A /* ChatFolderListViewController.swift */,
+				25273ABB2525F2580058DC4A /* View */,
+				25273AC82525FEB40058DC4A /* ViewModel */,
+			);
+			path = ChatFolderList;
+			sourceTree = "<group>";
+		};
+		25273ABB2525F2580058DC4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25273AC12525F2AE0058DC4A /* ChatFolderCell */,
+				25273AC02525F29A0058DC4A /* ChatCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		25273AC02525F29A0058DC4A /* ChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				25273ABE2525F26F0058DC4A /* ChatCell.swift */,
+				25273ABC2525F2660058DC4A /* ChatCell.xib */,
+			);
+			path = ChatCell;
+			sourceTree = "<group>";
+		};
+		25273AC12525F2AE0058DC4A /* ChatFolderCell */ = {
+			isa = PBXGroup;
+			children = (
+				25273AC22525F2C80058DC4A /* ChatFolderCell.swift */,
+				25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */,
+			);
+			path = ChatFolderCell;
+			sourceTree = "<group>";
+		};
+		25273AC62525FDE20058DC4A /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				25B5223725235FD600DBC563 /* ChatListViewController.swift */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		25273AC72525FDEA0058DC4A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25B5223325235FD600DBC563 /* AppDelegate.swift */,
+				25B5223525235FD600DBC563 /* SceneDelegate.swift */,
+				25B5223925235FD600DBC563 /* Main.storyboard */,
+				25B5223C25235FD700DBC563 /* Assets.xcassets */,
+				25B5223E25235FD700DBC563 /* LaunchScreen.storyboard */,
+				25B5224125235FD700DBC563 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25273AC82525FEB40058DC4A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				25273AC92525FEC40058DC4A /* ChatViewModel.swift */,
+				25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		25B5222725235FD600DBC563 = {
 			isa = PBXGroup;
 			children = (
@@ -69,13 +150,9 @@
 		25B5224725235FEB00DBC563 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				25B5223325235FD600DBC563 /* AppDelegate.swift */,
-				25B5223525235FD600DBC563 /* SceneDelegate.swift */,
-				25B5223725235FD600DBC563 /* ViewController.swift */,
-				25B5223925235FD600DBC563 /* Main.storyboard */,
-				25B5223C25235FD700DBC563 /* Assets.xcassets */,
-				25B5223E25235FD700DBC563 /* LaunchScreen.storyboard */,
-				25B5224125235FD700DBC563 /* Info.plist */,
+				25273ABA2525EAFB0058DC4A /* ChatFolderList */,
+				25273AC62525FDE20058DC4A /* ChatList */,
+				25273AC72525FDEA0058DC4A /* Supporting Files */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -86,7 +163,8 @@
 				25B5224E2523604F00DBC563 /* DropdownTransitioningDelegate.swift */,
 				25B5224F2523604F00DBC563 /* DropdownPresentationController.swift */,
 			);
-			path = Sources;
+			name = Sources;
+			path = Dropdown/Sources;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -147,7 +225,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25273AC52525F2DD0058DC4A /* ChatFolderCell.xib in Resources */,
 				25B5224025235FD700DBC563 /* LaunchScreen.storyboard in Resources */,
+				25273ABD2525F2660058DC4A /* ChatCell.xib in Resources */,
 				25B5223D25235FD700DBC563 /* Assets.xcassets in Resources */,
 				25B5223B25235FD600DBC563 /* Main.storyboard in Resources */,
 			);
@@ -160,11 +240,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25B5223825235FD600DBC563 /* ViewController.swift in Sources */,
+				25273AB92525EAF50058DC4A /* ChatFolderListViewController.swift in Sources */,
+				25B5223825235FD600DBC563 /* ChatListViewController.swift in Sources */,
 				25B5223425235FD600DBC563 /* AppDelegate.swift in Sources */,
 				25B522512523604F00DBC563 /* DropdownPresentationController.swift in Sources */,
+				25273ABF2525F26F0058DC4A /* ChatCell.swift in Sources */,
 				25B5223625235FD600DBC563 /* SceneDelegate.swift in Sources */,
 				25B522502523604F00DBC563 /* DropdownTransitioningDelegate.swift in Sources */,
+				25273ACA2525FEC40058DC4A /* ChatViewModel.swift in Sources */,
+				25273ACC2525FF0A0058DC4A /* ChatFolderViewModel.swift in Sources */,
+				25273AC32525F2C80058DC4A /* ChatFolderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Dropdown/Example/Info.plist;
+				INFOPLIST_FILE = "Dropdown/Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Dropdown/Example/Info.plist;
+				INFOPLIST_FILE = "Dropdown/Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
