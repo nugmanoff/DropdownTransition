@@ -8,36 +8,23 @@
 
 import UIKit
 
-internal func getStatusBarHeight() -> CGFloat {
-    var statusBarHeight: CGFloat = 0
-    if #available(iOS 13.0, *) {
-        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-        statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-    } else {
-        statusBarHeight = UIApplication.shared.statusBarFrame.height
-    }
-    return statusBarHeight
-}
-
 private enum Constants {
     static let navigationBarHeight: CGFloat = 44
     static let transitionDuration: TimeInterval = 0.45
 }
 
-let dropdownTransitioningDelegate = DropdownTransitioningDelegate()
-
-final class DropdownTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController,
+public final class DropdownTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
+    public func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
         DropdownPresentationController(presentedViewController: presented, presenting: presenting)
     }
 
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         DropdownPresentingAnimationController()
     }
 
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         DropdownDismissingAnimationController()
     }
 }

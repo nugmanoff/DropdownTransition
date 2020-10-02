@@ -14,6 +14,15 @@
 		25273AC52525F2DD0058DC4A /* ChatFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */; };
 		25273ACA2525FEC40058DC4A /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273AC92525FEC40058DC4A /* ChatViewModel.swift */; };
 		25273ACC2525FF0A0058DC4A /* ChatFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */; };
+		2536A0B4252743290004E2B2 /* Dropdown.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2536A0B3252743290004E2B2 /* Dropdown.podspec */; };
+		2536A0B72527435E0004E2B2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2536A0B52527435E0004E2B2 /* LICENSE */; };
+		2536A0B82527435E0004E2B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2536A0B62527435E0004E2B2 /* README.md */; };
+		2536A0BB252745230004E2B2 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BA252745230004E2B2 /* UIColor+hex.swift */; };
+		2536A0BD252745410004E2B2 /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BC252745410004E2B2 /* IntrinsicTableView.swift */; };
+		2536A0BF252746060004E2B2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BE252746060004E2B2 /* Helpers.swift */; };
+		2536A0C1252746350004E2B2 /* DropdownPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C0252746350004E2B2 /* DropdownPresentable.swift */; };
+		2536A0C3252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C2252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift */; };
+		2536A0C525274B290004E2B2 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C425274B290004E2B2 /* Animation.swift */; };
 		25B5223425235FD600DBC563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223325235FD600DBC563 /* AppDelegate.swift */; };
 		25B5223625235FD600DBC563 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223525235FD600DBC563 /* SceneDelegate.swift */; };
 		25B5223825235FD600DBC563 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223725235FD600DBC563 /* ChatListViewController.swift */; };
@@ -32,6 +41,15 @@
 		25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFolderCell.xib; sourceTree = "<group>"; };
 		25273AC92525FEC40058DC4A /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFolderViewModel.swift; sourceTree = "<group>"; };
+		2536A0B3252743290004E2B2 /* Dropdown.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Dropdown.podspec; sourceTree = SOURCE_ROOT; };
+		2536A0B52527435E0004E2B2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		2536A0B62527435E0004E2B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		2536A0BA252745230004E2B2 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		2536A0BC252745410004E2B2 /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
+		2536A0BE252746060004E2B2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		2536A0C0252746350004E2B2 /* DropdownPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownPresentable.swift; sourceTree = "<group>"; };
+		2536A0C2252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleButtonWithArrow.swift; sourceTree = "<group>"; };
+		2536A0C425274B290004E2B2 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		25B5223025235FD600DBC563 /* Dropdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dropdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B5223325235FD600DBC563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25B5223525235FD600DBC563 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,43 +77,21 @@
 			isa = PBXGroup;
 			children = (
 				25273AB82525EAF50058DC4A /* ChatFolderListViewController.swift */,
-				25273ABB2525F2580058DC4A /* View */,
-				25273AC82525FEB40058DC4A /* ViewModel */,
-			);
-			path = ChatFolderList;
-			sourceTree = "<group>";
-		};
-		25273ABB2525F2580058DC4A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				25273AC12525F2AE0058DC4A /* ChatFolderCell */,
-				25273AC02525F29A0058DC4A /* ChatCell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		25273AC02525F29A0058DC4A /* ChatCell */ = {
-			isa = PBXGroup;
-			children = (
-				25273ABE2525F26F0058DC4A /* ChatCell.swift */,
-				25273ABC2525F2660058DC4A /* ChatCell.xib */,
-			);
-			path = ChatCell;
-			sourceTree = "<group>";
-		};
-		25273AC12525F2AE0058DC4A /* ChatFolderCell */ = {
-			isa = PBXGroup;
-			children = (
 				25273AC22525F2C80058DC4A /* ChatFolderCell.swift */,
 				25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */,
+				25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */,
 			);
-			path = ChatFolderCell;
+			path = ChatFolderList;
 			sourceTree = "<group>";
 		};
 		25273AC62525FDE20058DC4A /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
 				25B5223725235FD600DBC563 /* ChatListViewController.swift */,
+				25273ABE2525F26F0058DC4A /* ChatCell.swift */,
+				25273ABC2525F2660058DC4A /* ChatCell.xib */,
+				25273AC92525FEC40058DC4A /* ChatViewModel.swift */,
+				2536A0C2252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -113,13 +109,24 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		25273AC82525FEB40058DC4A /* ViewModel */ = {
+		2536A0B22527431C0004E2B2 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				25273AC92525FEC40058DC4A /* ChatViewModel.swift */,
-				25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */,
+				2536A0B52527435E0004E2B2 /* LICENSE */,
+				2536A0B62527435E0004E2B2 /* README.md */,
+				2536A0B3252743290004E2B2 /* Dropdown.podspec */,
 			);
-			path = ViewModel;
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		2536A0B9252745060004E2B2 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				2536A0BA252745230004E2B2 /* UIColor+hex.swift */,
+				2536A0BC252745410004E2B2 /* IntrinsicTableView.swift */,
+				2536A0C425274B290004E2B2 /* Animation.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		25B5222725235FD600DBC563 = {
@@ -142,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				25B5224725235FEB00DBC563 /* Example */,
+				2536A0B22527431C0004E2B2 /* Pod */,
 				25B5224D2523604F00DBC563 /* Sources */,
 			);
 			path = Dropdown;
@@ -152,6 +160,7 @@
 			children = (
 				25273ABA2525EAFB0058DC4A /* ChatFolderList */,
 				25273AC62525FDE20058DC4A /* ChatList */,
+				2536A0B9252745060004E2B2 /* Misc */,
 				25273AC72525FDEA0058DC4A /* Supporting Files */,
 			);
 			path = Example;
@@ -160,8 +169,10 @@
 		25B5224D2523604F00DBC563 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				25B5224E2523604F00DBC563 /* DropdownTransitioningDelegate.swift */,
+				2536A0C0252746350004E2B2 /* DropdownPresentable.swift */,
 				25B5224F2523604F00DBC563 /* DropdownPresentationController.swift */,
+				25B5224E2523604F00DBC563 /* DropdownTransitioningDelegate.swift */,
+				2536A0BE252746060004E2B2 /* Helpers.swift */,
 			);
 			name = Sources;
 			path = Dropdown/Sources;
@@ -228,7 +239,10 @@
 				25273AC52525F2DD0058DC4A /* ChatFolderCell.xib in Resources */,
 				25B5224025235FD700DBC563 /* LaunchScreen.storyboard in Resources */,
 				25273ABD2525F2660058DC4A /* ChatCell.xib in Resources */,
+				2536A0B72527435E0004E2B2 /* LICENSE in Resources */,
+				2536A0B4252743290004E2B2 /* Dropdown.podspec in Resources */,
 				25B5223D25235FD700DBC563 /* Assets.xcassets in Resources */,
+				2536A0B82527435E0004E2B2 /* README.md in Resources */,
 				25B5223B25235FD600DBC563 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,8 +260,14 @@
 				25B522512523604F00DBC563 /* DropdownPresentationController.swift in Sources */,
 				25273ABF2525F26F0058DC4A /* ChatCell.swift in Sources */,
 				25B5223625235FD600DBC563 /* SceneDelegate.swift in Sources */,
+				2536A0C1252746350004E2B2 /* DropdownPresentable.swift in Sources */,
 				25B522502523604F00DBC563 /* DropdownTransitioningDelegate.swift in Sources */,
+				2536A0BB252745230004E2B2 /* UIColor+hex.swift in Sources */,
+				2536A0C3252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift in Sources */,
+				2536A0C525274B290004E2B2 /* Animation.swift in Sources */,
 				25273ACA2525FEC40058DC4A /* ChatViewModel.swift in Sources */,
+				2536A0BF252746060004E2B2 /* Helpers.swift in Sources */,
+				2536A0BD252745410004E2B2 /* IntrinsicTableView.swift in Sources */,
 				25273ACC2525FF0A0058DC4A /* ChatFolderViewModel.swift in Sources */,
 				25273AC32525F2C80058DC4A /* ChatFolderCell.swift in Sources */,
 			);

@@ -14,23 +14,16 @@ import UIKit
 final class ChatListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet private weak var tableView: UITableView!
-    lazy var navigationTitleButton = NavigationTitleButtonWithArrow()
+    private lazy var navigationTitleButton = NavigationTitleButtonWithArrow()
+    private let dropdownTransitioningDelegate = DropdownTransitioningDelegate()
     
-    private let chats: [ChatViewModel] = [
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-        .init(image: UIImage(named: "therock"), title: "The Rock", subtitle: "Hey, am I going to be the star in the next Jumanji movie?", date: "08 Oct", unreadCount: 3, isOnline: true),
-    ]
+    private let chats: [ChatViewModel] = ChatViewModel.default
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitleButton.addTarget(self, action: #selector(navigationTitleButtonDidPress), for: .touchUpInside)
         navigationItem.titleView = navigationTitleButton
+        navigationTitleButton.title = "Personal Chats"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
@@ -52,8 +45,10 @@ final class ChatListViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentChatFolderListViewController()
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let animation = AnimationFactory.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
+        let animator = Animator(animation: animation)
+        animator.animate(cell: cell, at: indexPath, in: tableView)
     }
     
     private func setupNavigationBar() {
@@ -64,61 +59,26 @@ final class ChatListViewController: UIViewController, UITableViewDelegate, UITab
         UIView.animate(withDuration: 0.2) {
             self.navigationTitleButton.toggleArrow()
         }
-        presentChatFolderListViewController()
+        if presentedViewController != nil {
+            navigationController?.dismiss(animated: true, completion: nil)
+            tableView.reloadData()
+        } else {
+            presentChatFolderListViewController()
+        }
     }
     
     private func presentChatFolderListViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let chatFolderListViewController = storyboard.instantiateViewController(identifier: "ChatFolderListViewController") as! ChatFolderListViewController
-        chatFolderListViewController.onDidDismiss = {
+        chatFolderListViewController.onDidDismiss = { chatFolderName in
             UIView.animate(withDuration: 0.2) {
                 self.navigationTitleButton.toggleArrow()
             }
+            self.navigationTitleButton.setTitle(chatFolderName, for: .normal)
+            self.tableView.reloadData()
         }
         chatFolderListViewController.transitioningDelegate = dropdownTransitioningDelegate
         chatFolderListViewController.modalPresentationStyle = .custom
         navigationController?.present(chatFolderListViewController, animated: true, completion: nil)
-    }
-}
-
-final class NavigationTitleButtonWithArrow: UIButton {
-    enum ArrowDirection {
-        case up
-        case down
-        
-        mutating func toggle() {
-            switch self {
-            case .up: self = .down
-            case .down: self = .up
-            }
-        }
-    }
-    
-    private var arrowDirection: ArrowDirection = .down
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        semanticContentAttribute = .forceRightToLeft
-        setTitleColor(.black, for: .normal)
-        setTitle("Personal Chats", for: .normal)
-        imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
-        let image = UIImage(systemName: "chevron.down")?.withConfiguration(UIImage.SymbolConfiguration(weight: .semibold)).withTintColor(UIColor(hexString: "#3769F0"))
-        setImage(image, for: .normal)
-    }
-    
-    required init?(coder: NSCoder) {
-        nil
-    }
-    
-    func toggleArrow() {
-        let identity = CGAffineTransform.identity
-        arrowDirection.toggle()
-        switch arrowDirection {
-        case .down:
-            imageView?.transform = identity
-        case .up:
-            imageView?.transform = identity.rotated(by: 180.0 * .pi)
-            imageView?.transform = identity.rotated(by: -.pi)
-        }
     }
 }

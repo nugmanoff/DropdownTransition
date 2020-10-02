@@ -13,14 +13,8 @@ private enum Constants {
     static let navigationBarHeight: CGFloat = 44
 }
 
-public protocol DropdownPresentable {
-    var dismissTranslationThreshold: CGFloat { get }
-    var stretchableBackgroundColor: UIColor { get }
-}
-
 final class DropdownPresentationController: UIPresentationController, UIGestureRecognizerDelegate {
     private var panGestureRecognizer: UIPanGestureRecognizer?
-    // TODO: Заменить на FeedbackEmitter
     private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
     private var afterReleaseDismissing = false
     private var startDismissing = false
@@ -170,26 +164,5 @@ extension DropdownPresentationController {
             self.afterReleaseDismissing = afterReleaseDismissing
             feedbackGenerator.impactOccurred()
         }
-    }
-}
-
-public extension UIView {
-    func setAnchorPoint(_ point: CGPoint) {
-        var newPoint = CGPoint(x: bounds.size.width * point.x, y: bounds.size.height * point.y)
-        var oldPoint = CGPoint(x: bounds.size.width * layer.anchorPoint.x, y: bounds.size.height * layer.anchorPoint.y)
-
-        newPoint = newPoint.applying(transform)
-        oldPoint = oldPoint.applying(transform)
-
-        var position = layer.position
-
-        position.x -= oldPoint.x
-        position.x += newPoint.x
-
-        position.y -= oldPoint.y
-        position.y += newPoint.y
-
-        layer.position = position
-        layer.anchorPoint = point
     }
 }
