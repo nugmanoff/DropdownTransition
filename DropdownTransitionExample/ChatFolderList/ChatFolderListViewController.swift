@@ -6,12 +6,14 @@
 //  Copyright © 2020 Aidar Nugmanoff. All rights reserved.
 //
 
+import Dropdown
 import UIKit
 
 final class ChatFolderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DropdownPresentable {
     @IBOutlet private weak var tableView: IntrinsicTableView!
     private var currentChatFolderName = String()
-      
+
+    var dismissAfterRelease: Bool { false }
     var onDidDismiss: ((String) -> Void)?
 
     private let folders: [ChatFolderViewModel] = ChatFolderViewModel.default

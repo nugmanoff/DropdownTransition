@@ -14,24 +14,47 @@
 		25273AC52525F2DD0058DC4A /* ChatFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */; };
 		25273ACA2525FEC40058DC4A /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273AC92525FEC40058DC4A /* ChatViewModel.swift */; };
 		25273ACC2525FF0A0058DC4A /* ChatFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */; };
-		2536A0B4252743290004E2B2 /* Dropdown.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2536A0B3252743290004E2B2 /* Dropdown.podspec */; };
-		2536A0B72527435E0004E2B2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2536A0B52527435E0004E2B2 /* LICENSE */; };
-		2536A0B82527435E0004E2B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2536A0B62527435E0004E2B2 /* README.md */; };
 		2536A0BB252745230004E2B2 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BA252745230004E2B2 /* UIColor+hex.swift */; };
 		2536A0BD252745410004E2B2 /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BC252745410004E2B2 /* IntrinsicTableView.swift */; };
-		2536A0BF252746060004E2B2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BE252746060004E2B2 /* Utility.swift */; };
-		2536A0C1252746350004E2B2 /* DropdownPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C0252746350004E2B2 /* DropdownPresentable.swift */; };
 		2536A0C3252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C2252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift */; };
 		2536A0C525274B290004E2B2 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C425274B290004E2B2 /* Animation.swift */; };
+		2536A157252856850004E2B2 /* Dropdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 2536A155252856850004E2B2 /* Dropdown.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2536A15A252856850004E2B2 /* DropdownTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2536A153252856850004E2B2 /* DropdownTransition.framework */; };
+		2536A15B252856850004E2B2 /* DropdownTransition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2536A153252856850004E2B2 /* DropdownTransition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2536A164252857990004E2B2 /* DropdownTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A160252857990004E2B2 /* DropdownTransitioningDelegate.swift */; };
+		2536A165252857990004E2B2 /* DropdownPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A161252857990004E2B2 /* DropdownPresentable.swift */; };
+		2536A166252857990004E2B2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A162252857990004E2B2 /* Utility.swift */; };
+		2536A167252857990004E2B2 /* DropdownPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A163252857990004E2B2 /* DropdownPresentationController.swift */; };
 		25B5223425235FD600DBC563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223325235FD600DBC563 /* AppDelegate.swift */; };
-		25B5223625235FD600DBC563 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223525235FD600DBC563 /* SceneDelegate.swift */; };
 		25B5223825235FD600DBC563 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5223725235FD600DBC563 /* ChatListViewController.swift */; };
 		25B5223B25235FD600DBC563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B5223925235FD600DBC563 /* Main.storyboard */; };
 		25B5223D25235FD700DBC563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B5223C25235FD700DBC563 /* Assets.xcassets */; };
 		25B5224025235FD700DBC563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B5223E25235FD700DBC563 /* LaunchScreen.storyboard */; };
-		25B522502523604F00DBC563 /* DropdownTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5224E2523604F00DBC563 /* DropdownTransitioningDelegate.swift */; };
-		25B522512523604F00DBC563 /* DropdownPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5224F2523604F00DBC563 /* DropdownPresentationController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2536A158252856850004E2B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25B5222825235FD600DBC563 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2536A152252856850004E2B2;
+			remoteInfo = Dropdown;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2536A15F252856850004E2B2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2536A15B252856850004E2B2 /* DropdownTransition.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		25273AB82525EAF50058DC4A /* ChatFolderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFolderListViewController.swift; sourceTree = "<group>"; };
@@ -41,32 +64,43 @@
 		25273AC42525F2DD0058DC4A /* ChatFolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFolderCell.xib; sourceTree = "<group>"; };
 		25273AC92525FEC40058DC4A /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		25273ACB2525FF0A0058DC4A /* ChatFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFolderViewModel.swift; sourceTree = "<group>"; };
-		2536A0B3252743290004E2B2 /* Dropdown.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Dropdown.podspec; sourceTree = SOURCE_ROOT; };
+		2536A0B3252743290004E2B2 /* DropdownTransition.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = DropdownTransition.podspec; sourceTree = SOURCE_ROOT; };
 		2536A0B52527435E0004E2B2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		2536A0B62527435E0004E2B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2536A0BA252745230004E2B2 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		2536A0BC252745410004E2B2 /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
-		2536A0BE252746060004E2B2 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		2536A0C0252746350004E2B2 /* DropdownPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownPresentable.swift; sourceTree = "<group>"; };
 		2536A0C2252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleButtonWithArrow.swift; sourceTree = "<group>"; };
 		2536A0C425274B290004E2B2 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		25B5223025235FD600DBC563 /* Dropdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dropdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2536A153252856850004E2B2 /* DropdownTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropdownTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2536A155252856850004E2B2 /* Dropdown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dropdown.h; sourceTree = "<group>"; };
+		2536A156252856850004E2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2536A160252857990004E2B2 /* DropdownTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownTransitioningDelegate.swift; sourceTree = "<group>"; };
+		2536A161252857990004E2B2 /* DropdownPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPresentable.swift; sourceTree = "<group>"; };
+		2536A162252857990004E2B2 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		2536A163252857990004E2B2 /* DropdownPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPresentationController.swift; sourceTree = "<group>"; };
+		2536A16825285A5E0004E2B2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
+		25B5223025235FD600DBC563 /* DropdownTransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropdownTransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B5223325235FD600DBC563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25B5223525235FD600DBC563 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		25B5223725235FD600DBC563 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		25B5223A25235FD600DBC563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25B5223C25235FD700DBC563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25B5223F25235FD700DBC563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25B5224125235FD700DBC563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25B5224E2523604F00DBC563 /* DropdownTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownTransitioningDelegate.swift; sourceTree = "<group>"; };
-		25B5224F2523604F00DBC563 /* DropdownPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2536A150252856850004E2B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		25B5222D25235FD600DBC563 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2536A15A252856850004E2B2 /* DropdownTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				25B5223325235FD600DBC563 /* AppDelegate.swift */,
-				25B5223525235FD600DBC563 /* SceneDelegate.swift */,
 				25B5223925235FD600DBC563 /* Main.storyboard */,
 				25B5223C25235FD700DBC563 /* Assets.xcassets */,
 				25B5223E25235FD700DBC563 /* LaunchScreen.storyboard */,
@@ -109,14 +142,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2536A0B22527431C0004E2B2 /* Pod */ = {
+		2536A0B22527431C0004E2B2 /* Description */ = {
 			isa = PBXGroup;
 			children = (
+				2536A16825285A5E0004E2B2 /* Package.swift */,
 				2536A0B52527435E0004E2B2 /* LICENSE */,
 				2536A0B62527435E0004E2B2 /* README.md */,
-				2536A0B3252743290004E2B2 /* Dropdown.podspec */,
+				2536A0B3252743290004E2B2 /* DropdownTransition.podspec */,
 			);
-			path = Pod;
+			path = Description;
 			sourceTree = "<group>";
 		};
 		2536A0B9252745060004E2B2 /* Misc */ = {
@@ -129,10 +163,25 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		2536A154252856850004E2B2 /* DropdownTransition */ = {
+			isa = PBXGroup;
+			children = (
+				2536A161252857990004E2B2 /* DropdownPresentable.swift */,
+				2536A163252857990004E2B2 /* DropdownPresentationController.swift */,
+				2536A160252857990004E2B2 /* DropdownTransitioningDelegate.swift */,
+				2536A162252857990004E2B2 /* Utility.swift */,
+				2536A155252856850004E2B2 /* Dropdown.h */,
+				2536A156252856850004E2B2 /* Info.plist */,
+			);
+			path = DropdownTransition;
+			sourceTree = "<group>";
+		};
 		25B5222725235FD600DBC563 = {
 			isa = PBXGroup;
 			children = (
-				25B5223225235FD600DBC563 /* Dropdown */,
+				25B5223225235FD600DBC563 /* DropdownTransitionExample */,
+				2536A154252856850004E2B2 /* DropdownTransition */,
+				2536A0B22527431C0004E2B2 /* Description */,
 				25B5223125235FD600DBC563 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,22 +189,13 @@
 		25B5223125235FD600DBC563 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				25B5223025235FD600DBC563 /* Dropdown.app */,
+				25B5223025235FD600DBC563 /* DropdownTransitionExample.app */,
+				2536A153252856850004E2B2 /* DropdownTransition.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		25B5223225235FD600DBC563 /* Dropdown */ = {
-			isa = PBXGroup;
-			children = (
-				25B5224725235FEB00DBC563 /* Example */,
-				2536A0B22527431C0004E2B2 /* Pod */,
-				25B5224D2523604F00DBC563 /* Sources */,
-			);
-			path = Dropdown;
-			sourceTree = "<group>";
-		};
-		25B5224725235FEB00DBC563 /* Example */ = {
+		25B5223225235FD600DBC563 /* DropdownTransitionExample */ = {
 			isa = PBXGroup;
 			children = (
 				25273ABA2525EAFB0058DC4A /* ChatFolderList */,
@@ -163,39 +203,58 @@
 				2536A0B9252745060004E2B2 /* Misc */,
 				25273AC72525FDEA0058DC4A /* Supporting Files */,
 			);
-			path = Example;
+			path = DropdownTransitionExample;
 			sourceTree = "<group>";
-		};
-		25B5224D2523604F00DBC563 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				2536A0C0252746350004E2B2 /* DropdownPresentable.swift */,
-				25B5224F2523604F00DBC563 /* DropdownPresentationController.swift */,
-				25B5224E2523604F00DBC563 /* DropdownTransitioningDelegate.swift */,
-				2536A0BE252746060004E2B2 /* Utility.swift */,
-			);
-			name = Sources;
-			path = Dropdown/Sources;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		2536A14E252856850004E2B2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2536A157252856850004E2B2 /* Dropdown.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		25B5222F25235FD600DBC563 /* Dropdown */ = {
+		2536A152252856850004E2B2 /* DropdownTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 25B5224425235FD700DBC563 /* Build configuration list for PBXNativeTarget "Dropdown" */;
+			buildConfigurationList = 2536A15C252856850004E2B2 /* Build configuration list for PBXNativeTarget "DropdownTransition" */;
 			buildPhases = (
-				25B5222C25235FD600DBC563 /* Sources */,
-				25B5222D25235FD600DBC563 /* Frameworks */,
-				25B5222E25235FD600DBC563 /* Resources */,
+				2536A14E252856850004E2B2 /* Headers */,
+				2536A14F252856850004E2B2 /* Sources */,
+				2536A150252856850004E2B2 /* Frameworks */,
+				2536A151252856850004E2B2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Dropdown;
+			name = DropdownTransition;
 			productName = Dropdown;
-			productReference = 25B5223025235FD600DBC563 /* Dropdown.app */;
+			productReference = 2536A153252856850004E2B2 /* DropdownTransition.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		25B5222F25235FD600DBC563 /* DropdownTransitionExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25B5224425235FD700DBC563 /* Build configuration list for PBXNativeTarget "DropdownTransitionExample" */;
+			buildPhases = (
+				25B5222C25235FD600DBC563 /* Sources */,
+				25B5222D25235FD600DBC563 /* Frameworks */,
+				25B5222E25235FD600DBC563 /* Resources */,
+				2536A15F252856850004E2B2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2536A159252856850004E2B2 /* PBXTargetDependency */,
+			);
+			name = DropdownTransitionExample;
+			productName = Dropdown;
+			productReference = 25B5223025235FD600DBC563 /* DropdownTransitionExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -208,6 +267,10 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Aidar Nugmanoff";
 				TargetAttributes = {
+					2536A152252856850004E2B2 = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
+					};
 					25B5222F25235FD600DBC563 = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -226,12 +289,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				25B5222F25235FD600DBC563 /* Dropdown */,
+				25B5222F25235FD600DBC563 /* DropdownTransitionExample */,
+				2536A152252856850004E2B2 /* DropdownTransition */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2536A151252856850004E2B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		25B5222E25235FD600DBC563 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,10 +310,7 @@
 				25273AC52525F2DD0058DC4A /* ChatFolderCell.xib in Resources */,
 				25B5224025235FD700DBC563 /* LaunchScreen.storyboard in Resources */,
 				25273ABD2525F2660058DC4A /* ChatCell.xib in Resources */,
-				2536A0B72527435E0004E2B2 /* LICENSE in Resources */,
-				2536A0B4252743290004E2B2 /* Dropdown.podspec in Resources */,
 				25B5223D25235FD700DBC563 /* Assets.xcassets in Resources */,
-				2536A0B82527435E0004E2B2 /* README.md in Resources */,
 				25B5223B25235FD600DBC563 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +318,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2536A14F252856850004E2B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2536A167252857990004E2B2 /* DropdownPresentationController.swift in Sources */,
+				2536A165252857990004E2B2 /* DropdownPresentable.swift in Sources */,
+				2536A164252857990004E2B2 /* DropdownTransitioningDelegate.swift in Sources */,
+				2536A166252857990004E2B2 /* Utility.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		25B5222C25235FD600DBC563 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,16 +336,11 @@
 				25273AB92525EAF50058DC4A /* ChatFolderListViewController.swift in Sources */,
 				25B5223825235FD600DBC563 /* ChatListViewController.swift in Sources */,
 				25B5223425235FD600DBC563 /* AppDelegate.swift in Sources */,
-				25B522512523604F00DBC563 /* DropdownPresentationController.swift in Sources */,
 				25273ABF2525F26F0058DC4A /* ChatCell.swift in Sources */,
-				25B5223625235FD600DBC563 /* SceneDelegate.swift in Sources */,
-				2536A0C1252746350004E2B2 /* DropdownPresentable.swift in Sources */,
-				25B522502523604F00DBC563 /* DropdownTransitioningDelegate.swift in Sources */,
 				2536A0BB252745230004E2B2 /* UIColor+hex.swift in Sources */,
 				2536A0C3252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift in Sources */,
 				2536A0C525274B290004E2B2 /* Animation.swift in Sources */,
 				25273ACA2525FEC40058DC4A /* ChatViewModel.swift in Sources */,
-				2536A0BF252746060004E2B2 /* Utility.swift in Sources */,
 				2536A0BD252745410004E2B2 /* IntrinsicTableView.swift in Sources */,
 				25273ACC2525FF0A0058DC4A /* ChatFolderViewModel.swift in Sources */,
 				25273AC32525F2C80058DC4A /* ChatFolderCell.swift in Sources */,
@@ -274,6 +348,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2536A159252856850004E2B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2536A152252856850004E2B2 /* DropdownTransition */;
+			targetProxy = 2536A158252856850004E2B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		25B5223925235FD600DBC563 /* Main.storyboard */ = {
@@ -295,6 +377,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2536A15D252856850004E2B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DropdownTransition/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nugmanoff.dropdown-transition";
+				PRODUCT_NAME = DropdownTransition;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2536A15E252856850004E2B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DropdownTransition/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nugmanoff.dropdown-transition";
+				PRODUCT_NAME = DropdownTransition;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		25B5224225235FD700DBC563 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -412,14 +551,16 @@
 		25B5224525235FD700DBC563 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Dropdown/Example/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DropdownTransitionExample/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nugmanoff.Dropdown;
+				PRODUCT_BUNDLE_IDENTIFIER = "nugmanoff.dropdown-transition-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -429,14 +570,16 @@
 		25B5224625235FD700DBC563 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Dropdown/Example/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DropdownTransitionExample/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nugmanoff.Dropdown;
+				PRODUCT_BUNDLE_IDENTIFIER = "nugmanoff.dropdown-transition-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,6 +589,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2536A15C252856850004E2B2 /* Build configuration list for PBXNativeTarget "DropdownTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2536A15D252856850004E2B2 /* Debug */,
+				2536A15E252856850004E2B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		25B5222B25235FD600DBC563 /* Build configuration list for PBXProject "Dropdown" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -455,7 +607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		25B5224425235FD700DBC563 /* Build configuration list for PBXNativeTarget "Dropdown" */ = {
+		25B5224425235FD700DBC563 /* Build configuration list for PBXNativeTarget "DropdownTransitionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25B5224525235FD700DBC563 /* Debug */,

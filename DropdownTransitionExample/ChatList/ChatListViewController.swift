@@ -6,15 +6,13 @@
 //  Copyright © 2020 Aidar Nugmanoff. All rights reserved.
 //
 
-// @TODO static let transitioningDelegate
-// @TODO handle largetitle, searchbar?
-
+import Dropdown
 import UIKit
 
 final class ChatListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    private lazy var activityIndicator = UIActivityIndicatorView()
     private lazy var navigationTitleButton = NavigationTitleButtonWithArrow()
     private let dropdownTransitioningDelegate = DropdownTransitioningDelegate()
     private let chatStorage = ChatViewModel.storage
@@ -22,6 +20,13 @@ final class ChatListViewController: UIViewController, UITableViewDelegate, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .large
+        } else {
+            activityIndicator.style = .whiteLarge
+        }
+        activityIndicator.color = UIColor(hexString: "#3769EF")
+        activityIndicator.isHidden = true
         navigationTitleButton.addTarget(self, action: #selector(navigationTitleButtonDidPress), for: .touchUpInside)
         navigationItem.titleView = navigationTitleButton
         navigationTitleButton.title = chatFolderName
@@ -32,7 +37,13 @@ final class ChatListViewController: UIViewController, UITableViewDelegate, UITab
         tableView.register(UINib(nibName: "ChatCell", bundle: nil), forCellReuseIdentifier: "ChatCell")
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
+        view.addSubview(activityIndicator)
         setupNavigationBar()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        activityIndicator.center = tableView.center
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,7 +93,7 @@ final class ChatListViewController: UIViewController, UITableViewDelegate, UITab
     
     private func presentChatFolderListViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let chatFolderListViewController = storyboard.instantiateViewController(identifier: "ChatFolderListViewController") as! ChatFolderListViewController
+        let chatFolderListViewController = storyboard.instantiateViewController(withIdentifier: "ChatFolderListViewController") as! ChatFolderListViewController
         chatFolderListViewController.onDidDismiss = { [weak self] chatFolderName in
             UIView.animate(withDuration: 0.2) {
                 self?.navigationTitleButton.toggleArrow()

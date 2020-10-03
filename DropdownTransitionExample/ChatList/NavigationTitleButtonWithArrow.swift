@@ -30,9 +30,8 @@ final class NavigationTitleButtonWithArrow: UIButton {
         setTitle("Personal Chats", for: .normal)
         imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         setTitleColor(.black, for: .normal)
-        let image = UIImage(systemName: "chevron.down")?
-            .withConfiguration(UIImage.SymbolConfiguration(weight: .semibold))
-            .withTintColor(UIColor(hexString: "#3769F0"))
+        imageView?.tintColor = .red
+        let image = UIImage(named: "chevron.down")
         setImage(image, for: .normal)
     }
     

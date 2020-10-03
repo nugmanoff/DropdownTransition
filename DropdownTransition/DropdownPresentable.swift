@@ -20,7 +20,7 @@ public protocol DropdownPresentable {
     var feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle { get }
 }
 
-extension DropdownPresentable {
+public extension DropdownPresentable {
     var isDraggingEnabled: Bool { true }
     var dismissAfterRelease: Bool { true }
     var dismissDraggingTranslationThreshold: CGFloat { 150.0 }
