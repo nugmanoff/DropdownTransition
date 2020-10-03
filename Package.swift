@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "Dropdown",
+    name: "DropdownTransition",
     platforms: [
         .iOS(.v10)
     ],
     products: [
         .library(
-            name: "Dropdown",
-            targets: ["Dropdown"]),
+            name: "DropdownTransition",
+            targets: ["DropdownTransition"]),
     ],
     targets: [
         .target(
-            name: "Dropdown",
-            path: "Dropdown"
+            name: "DropdownTransition",
+            path: "DropdownTransition"
         )
     ]
 )
