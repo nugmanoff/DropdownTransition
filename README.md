@@ -1,3 +1,8 @@
+<p align="center">
+	<a href="https://github.com/nugmanoff/DropdownTransition/"><img src="Resources/cover-full.png" alt="DropdownTransition width="600" height="220" /></a><br /><br />
+</p>
+<br />
+
 <p align="center">Simple and elegant Dropdown Transition</p>
 <p align="center">
     <a href="(https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
