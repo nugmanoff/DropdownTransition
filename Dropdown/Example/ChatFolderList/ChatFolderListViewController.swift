@@ -9,13 +9,9 @@
 import UIKit
 
 final class ChatFolderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DropdownPresentable {
-    
     @IBOutlet private weak var tableView: IntrinsicTableView!
     private var currentChatFolderName = String()
-    
-    var dismissTranslationThreshold: CGFloat = 150
-    var stretchableBackgroundColor: UIColor = .white
-    
+      
     var onDidDismiss: ((String) -> Void)?
 
     private let folders: [ChatFolderViewModel] = ChatFolderViewModel.default

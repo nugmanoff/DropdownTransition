@@ -19,7 +19,7 @@
 		2536A0B82527435E0004E2B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2536A0B62527435E0004E2B2 /* README.md */; };
 		2536A0BB252745230004E2B2 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BA252745230004E2B2 /* UIColor+hex.swift */; };
 		2536A0BD252745410004E2B2 /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BC252745410004E2B2 /* IntrinsicTableView.swift */; };
-		2536A0BF252746060004E2B2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BE252746060004E2B2 /* Helpers.swift */; };
+		2536A0BF252746060004E2B2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0BE252746060004E2B2 /* Utility.swift */; };
 		2536A0C1252746350004E2B2 /* DropdownPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C0252746350004E2B2 /* DropdownPresentable.swift */; };
 		2536A0C3252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C2252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift */; };
 		2536A0C525274B290004E2B2 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536A0C425274B290004E2B2 /* Animation.swift */; };
@@ -46,7 +46,7 @@
 		2536A0B62527435E0004E2B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2536A0BA252745230004E2B2 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		2536A0BC252745410004E2B2 /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
-		2536A0BE252746060004E2B2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		2536A0BE252746060004E2B2 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		2536A0C0252746350004E2B2 /* DropdownPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownPresentable.swift; sourceTree = "<group>"; };
 		2536A0C2252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleButtonWithArrow.swift; sourceTree = "<group>"; };
 		2536A0C425274B290004E2B2 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 				2536A0C0252746350004E2B2 /* DropdownPresentable.swift */,
 				25B5224F2523604F00DBC563 /* DropdownPresentationController.swift */,
 				25B5224E2523604F00DBC563 /* DropdownTransitioningDelegate.swift */,
-				2536A0BE252746060004E2B2 /* Helpers.swift */,
+				2536A0BE252746060004E2B2 /* Utility.swift */,
 			);
 			name = Sources;
 			path = Dropdown/Sources;
@@ -266,7 +266,7 @@
 				2536A0C3252746D40004E2B2 /* NavigationTitleButtonWithArrow.swift in Sources */,
 				2536A0C525274B290004E2B2 /* Animation.swift in Sources */,
 				25273ACA2525FEC40058DC4A /* ChatViewModel.swift in Sources */,
-				2536A0BF252746060004E2B2 /* Helpers.swift in Sources */,
+				2536A0BF252746060004E2B2 /* Utility.swift in Sources */,
 				2536A0BD252745410004E2B2 /* IntrinsicTableView.swift in Sources */,
 				25273ACC2525FF0A0058DC4A /* ChatFolderViewModel.swift in Sources */,
 				25273AC32525F2C80058DC4A /* ChatFolderCell.swift in Sources */,

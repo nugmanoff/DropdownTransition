@@ -19,6 +19,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="j5Q-OA-Plz">
+                                <rect key="frame" x="0.0" y="382" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -31,6 +36,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1PO-hT-zEZ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="j5Q-OA-Plz" id="iTs-Ro-23Z"/>
                         <outlet property="tableView" destination="QzG-6h-BTo" id="h8c-CB-KKe"/>
                     </connections>
                 </viewController>

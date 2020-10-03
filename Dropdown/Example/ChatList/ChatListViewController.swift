@@ -14,16 +14,17 @@ import UIKit
 final class ChatListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     private lazy var navigationTitleButton = NavigationTitleButtonWithArrow()
     private let dropdownTransitioningDelegate = DropdownTransitioningDelegate()
-    
-    private let chats: [ChatViewModel] = ChatViewModel.default
+    private let chatStorage = ChatViewModel.storage
+    private var chatFolderName = "Personal Chats"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitleButton.addTarget(self, action: #selector(navigationTitleButtonDidPress), for: .touchUpInside)
         navigationItem.titleView = navigationTitleButton
-        navigationTitleButton.title = "Personal Chats"
+        navigationTitleButton.title = chatFolderName
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
@@ -35,12 +36,12 @@ final class ChatListViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        chats.count
+        chatStorage[chatFolderName]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
-        cell.configure(with: chats[indexPath.row])
+        cell.configure(with: chatStorage[chatFolderName]![indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
@@ -61,21 +62,34 @@ final class ChatListViewController: UIViewController, UITableViewDelegate, UITab
         }
         if presentedViewController != nil {
             navigationController?.dismiss(animated: true, completion: nil)
-            tableView.reloadData()
+            showLoaderAndReloadTable()
         } else {
             presentChatFolderListViewController()
         }
     }
     
+    private func showLoaderAndReloadTable() {
+        tableView.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.activityIndicator.stopAnimating()
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
+    }
+    
+    
     private func presentChatFolderListViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let chatFolderListViewController = storyboard.instantiateViewController(identifier: "ChatFolderListViewController") as! ChatFolderListViewController
-        chatFolderListViewController.onDidDismiss = { chatFolderName in
+        chatFolderListViewController.onDidDismiss = { [weak self] chatFolderName in
             UIView.animate(withDuration: 0.2) {
-                self.navigationTitleButton.toggleArrow()
+                self?.navigationTitleButton.toggleArrow()
             }
-            self.navigationTitleButton.setTitle(chatFolderName, for: .normal)
-            self.tableView.reloadData()
+            self?.chatFolderName = chatFolderName
+            self?.navigationTitleButton.setTitle(chatFolderName, for: .normal)
+            self?.showLoaderAndReloadTable()
         }
         chatFolderListViewController.transitioningDelegate = dropdownTransitioningDelegate
         chatFolderListViewController.modalPresentationStyle = .custom

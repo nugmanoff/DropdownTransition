@@ -26,8 +26,8 @@ struct ChatFolderViewModel {
 
 extension ChatFolderViewModel {
     static var `default`: [ChatFolderViewModel] = [
-        .init(image: UIImage(named: "star"), imageBackgroundColor: UIColor(hexString: "#6ED352"), name: "Bookmarks", chatCount: 16),
-        .init(image: UIImage(named: "users"), imageBackgroundColor: UIColor(hexString: "#EE6C3E"), name: "Personal Chats", chatCount: 7),
+        .init(image: UIImage(named: "star"), imageBackgroundColor: UIColor(hexString: "#6ED352"), name: "Personal Chats", chatCount: 16),
+        .init(image: UIImage(named: "users"), imageBackgroundColor: UIColor(hexString: "#EE6C3E"), name: "My mentors", chatCount: 7),
         .init(image: UIImage(named: "portfolio"), imageBackgroundColor: UIColor(hexString: "#3769EF"), name: "Work", chatCount: 5),
         .init(image: UIImage(named: "plus"), imageBackgroundColor: .clear, name: "Add new folder", chatCount: 0, isAnnotationHidden: true)
     ]

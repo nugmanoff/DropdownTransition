@@ -15,20 +15,23 @@ private enum Constants {
 
 final class DropdownPresentationController: UIPresentationController, UIGestureRecognizerDelegate {
     private var panGestureRecognizer: UIPanGestureRecognizer?
-    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-    private var afterReleaseDismissing = false
-    private var startDismissing = false
+    private var feedbackGenerator: UIImpactFeedbackGenerator?
+    private var presentedDropdown: DropdownPresentable!
+    private var dismissAfterReleaseState = false
 
     private lazy var dimmingView: UIView = {
         let view = UIView()
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dimmingViewDidTap)))
+        let dismissAfterTappingDimmingView = (presentedViewController as? DropdownPresentable)?.dismissAfterTappingDimmingView ?? false
+        if dismissAfterTappingDimmingView {
+            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dimmingViewDidTap)))
+        }
         view.backgroundColor = UIColor.black.withAlphaComponent(Constants.dimmingViewAlphaComponent)
         return view
     }()
 
     private lazy var backupView: UIView = {
         let view = UIView()
-        let backgroundColor = (presentedViewController as? DropdownPresentable)?.stretchableBackgroundColor ?? .black
+        let backgroundColor = (presentedViewController as? DropdownPresentable)?.stretchableBackgroundColor ?? .clear
         view.backgroundColor = backgroundColor
         return view
     }()
@@ -44,9 +47,13 @@ final class DropdownPresentationController: UIPresentationController, UIGestureR
     override func presentationTransitionWillBegin() {
         guard
             let containerView = containerView,
-            let coordinator = presentingViewController.transitionCoordinator
-        else { return }
-        feedbackGenerator.prepare()
+            let coordinator = presentingViewController.transitionCoordinator,
+            let presentedDropdown = presentedViewController as? DropdownPresentable
+        else {
+            assertionFailure("Conditions necessary for transition are not satisfied")
+            return
+        }
+        self.presentedDropdown = presentedDropdown
         let navigationBarY: CGFloat = getStatusBarHeight() + Constants.navigationBarHeight
         dimmingView.frame = CGRect(x: 0, y: navigationBarY, width: containerView.bounds.width, height: containerView.bounds.height - navigationBarY)
         containerView.addSubview(dimmingView)
@@ -59,12 +66,17 @@ final class DropdownPresentationController: UIPresentationController, UIGestureR
 
     override func presentationTransitionDidEnd(_ completed: Bool) {
         super.presentationTransitionDidEnd(completed)
-        guard let containerView = containerView else { return }
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         panGestureRecognizer?.delegate = self
         panGestureRecognizer?.maximumNumberOfTouches = 1
         panGestureRecognizer?.cancelsTouchesInView = false
-        containerView.addGestureRecognizer(panGestureRecognizer!)
+        if presentedDropdown.isDraggingEnabled {
+            containerView?.addGestureRecognizer(panGestureRecognizer!)
+        }
+        if presentedDropdown.isFeedbackEnabled {
+            feedbackGenerator = UIImpactFeedbackGenerator(style: presentedDropdown.feedbackStyle)
+            feedbackGenerator?.prepare()
+        }
         backupView.frame = CGRect(x: 0, y: 0, width: frameOfPresentedViewInContainerView.width, height: 1)
         dimmingView.insertSubview(backupView, belowSubview: presentedViewController.view)
     }
@@ -98,7 +110,6 @@ extension DropdownPresentationController {
     @objc func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
         guard
             gestureRecognizer.isEqual(panGestureRecognizer),
-            let presentedView = presentedView,
             let containerView = containerView else { return }
         switch gestureRecognizer.state {
         case .began:
@@ -109,36 +120,39 @@ extension DropdownPresentationController {
         case .changed:
             let translation = gestureRecognizer.translation(in: containerView).y
             updateForTranslation(inVerticalDirection: translation)
-            if translation <= -Constants.navigationBarHeight {
+            guard presentedDropdown.dismissAfterRelease else { return }
+            if translation <= -presentedDropdown.dismissDraggingTranslationThreshold {
                 presentedViewController.dismiss(animated: true, completion: nil)
             }
         case .ended:
             let translation = gestureRecognizer.translation(in: containerView).y
-            guard let dismissTranslationThreshold = (presentedViewController as? DropdownPresentable)?.dismissTranslationThreshold else { return }
-            if translation >= dismissTranslationThreshold {
+            guard presentedDropdown.dismissAfterRelease else {
+                animatePresentedViewBackToPlace()
+                return
+            }
+            if translation >= presentedDropdown.dismissDraggingTranslationThreshold {
                 presentedViewController.dismiss(animated: true, completion: nil)
             } else {
-                UIView.animate(withDuration: 0.6,
-                               delay: 0,
-                               usingSpringWithDamping: 1,
-                               initialSpringVelocity: 1,
-                               options: [.curveEaseOut, .allowUserInteraction],
-                               animations: {
-                                   presentedView.transform = .identity
-                                   self.backupView.transform = .identity
-                })
+                animatePresentedViewBackToPlace()
             }
         default:
             break
         }
     }
+    
+    private func animatePresentedViewBackToPlace() {
+        UIView.animate(withDuration: 0.6,
+                       delay: 0,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 1,
+                       options: [.curveEaseOut, .allowUserInteraction],
+                       animations: {
+                            self.presentedView?.transform = .identity
+                            self.backupView.transform = .identity
+        })
+    }
 
     private func updateForTranslation(inVerticalDirection translation: CGFloat) {
-        guard
-            let presentedView = presentedView,
-            !startDismissing,
-            let dismissTranslationThreshold = (presentedViewController as? DropdownPresentable)?.dismissTranslationThreshold else { return }
-
         let elasticThreshold: CGFloat = 0
         let translationFactor: CGFloat = 1 / 2
 
@@ -157,12 +171,14 @@ extension DropdownPresentationController {
             backupView.transform = CGAffineTransform(scaleX: 1, y: translationForModal)
         }
 
-        presentedView.transform = CGAffineTransform.identity.translatedBy(x: 0, y: translationForModal)
+        presentedView?.transform = CGAffineTransform.identity.translatedBy(x: 0, y: translationForModal)
 
-        let afterReleaseDismissing = (translation >= dismissTranslationThreshold)
-        if afterReleaseDismissing != self.afterReleaseDismissing {
-            self.afterReleaseDismissing = afterReleaseDismissing
-            feedbackGenerator.impactOccurred()
+        guard presentedDropdown.dismissAfterRelease else { return }
+        
+        let dismissAfterReleaseState = (translation >= presentedDropdown.dismissDraggingTranslationThreshold)
+        if dismissAfterReleaseState != self.dismissAfterReleaseState {
+            self.dismissAfterReleaseState = dismissAfterReleaseState
+            feedbackGenerator?.impactOccurred()
         }
     }
 }

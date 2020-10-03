@@ -10,10 +10,18 @@ import UIKit
 
 private enum Constants {
     static let navigationBarHeight: CGFloat = 44
-    static let transitionDuration: TimeInterval = 0.45
 }
 
 public final class DropdownTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
+    private let presentingAnimationDuration: TimeInterval
+    private let dismissingAnimationDuration: TimeInterval
+    
+    public init(presentingAnimationDuration: TimeInterval = 0.45, dismissingAnimatinoDuration: TimeInterval = 0.45) {
+        self.presentingAnimationDuration = presentingAnimationDuration
+        self.dismissingAnimationDuration = dismissingAnimatinoDuration
+    }
+    
+    
     public func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
@@ -21,17 +29,23 @@ public final class DropdownTransitioningDelegate: NSObject, UIViewControllerTran
     }
 
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        DropdownPresentingAnimationController()
+        DropdownPresentingAnimationController(transitionDuration: presentingAnimationDuration)
     }
 
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        DropdownDismissingAnimationController()
+        DropdownDismissingAnimationController(transitionDuration: dismissingAnimationDuration)
     }
 }
 
 final class DropdownPresentingAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
+    private let transitionDuration: TimeInterval
+    
+    init(transitionDuration: TimeInterval) {
+        self.transitionDuration = transitionDuration
+    }
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        Constants.transitionDuration
+        transitionDuration
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -64,10 +78,16 @@ final class DropdownPresentingAnimationController: NSObject, UIViewControllerAni
 }
 
 final class DropdownDismissingAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        Constants.transitionDuration
+    private let transitionDuration: TimeInterval
+       
+    init(transitionDuration: TimeInterval) {
+        self.transitionDuration = transitionDuration
     }
-
+       
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        transitionDuration
+    }
+    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromView = transitionContext.view(forKey: .from),
             let presentedViewController = transitionContext.viewController(forKey: .to) else { return }
