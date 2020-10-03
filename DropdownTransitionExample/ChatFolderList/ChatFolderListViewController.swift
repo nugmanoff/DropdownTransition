@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aidar Nugmanoff. All rights reserved.
 //
 
-import Dropdown
+import DropdownTransition
 import UIKit
 
 final class ChatFolderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DropdownPresentable {

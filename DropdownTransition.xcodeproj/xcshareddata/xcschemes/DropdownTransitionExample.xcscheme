@@ -17,7 +17,7 @@
                BlueprintIdentifier = "25B5222F25235FD600DBC563"
                BuildableName = "DropdownTransitionExample.app"
                BlueprintName = "DropdownTransitionExample"
-               ReferencedContainer = "container:Dropdown.xcodeproj">
+               ReferencedContainer = "container:DropdownTransition.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "25B5222F25235FD600DBC563"
             BuildableName = "DropdownTransitionExample.app"
             BlueprintName = "DropdownTransitionExample"
-            ReferencedContainer = "container:Dropdown.xcodeproj">
+            ReferencedContainer = "container:DropdownTransition.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "25B5222F25235FD600DBC563"
             BuildableName = "DropdownTransitionExample.app"
             BlueprintName = "DropdownTransitionExample"
-            ReferencedContainer = "container:Dropdown.xcodeproj">
+            ReferencedContainer = "container:DropdownTransition.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
