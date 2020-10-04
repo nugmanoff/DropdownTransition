@@ -76,6 +76,7 @@ var isFeedbackEnabled: Bool { get } // whether or not haptic feedback is generat
 var feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle { get } // haptic feedback style
 ```
 <img src="https://github.com/nugmanoff/DropdownTransition/blob/master/Resources/demo-nondraggable.gif" width="400" height="864"/>
+
 Demo above shows the presented controller with `dismissAfterRelease` set to `false`, as you see controller is not dismissed automatically as opposed to the default state shown in the first demo.
 
 ### Pro tip
