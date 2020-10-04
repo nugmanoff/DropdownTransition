@@ -3,7 +3,7 @@
 </p>
 <br />
 
-<p align="center">Simple and elegant Dropdown Transition</p>
+<p align="center">Simple and elegant dropdown transition for iOS</p>
 <p align="center">
     <a href="(https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
     <a href="https://cocoapods.org/pods/DropdownTransition"><img src="https://img.shields.io/cocoapods/v/DropdownTransition.svg"></a>
