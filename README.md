@@ -14,7 +14,7 @@
 
 ## Why?
 
-I needed to perform the dropdown transition in the app I was buildin and I've found many great libraries out there that provide desired functionality. But all of them had one flaw in them: they were *NOT* implemented as custom transitions, but rather as some view animations.
+I needed to perform the dropdown transition in the app I was building and I've found many great libraries out there that provide desired functionality. But all of them had one flaw in them: they were *NOT* implemented as custom transitions, but rather as some view animations.
 
 This library solves this problem by providing you custom modal transition that is implemented using `UIPresentationController` and `UITransitionCoordinator`. It provides you with greater flexibility and is more suitable for the use in projects that follow some standard architecture & navigation patterns (e.g. `Router`, `Navigator` & `Coordinator` patterns)
 
