@@ -95,7 +95,7 @@ private func updatePreferredContentSize() {
 
 If you are still experiencing issues with the height of the controller not being set correctly, make sure that you got your constraints right and they are feasibly satisfiable.
 
-In case if you are looking for into more details I've added demonstrated [Example](DropdownTransition/DropdownTransitionExample) to the repo.
+In case if you are looking for into more details I've added demonstrated [Example](https://github.com/nugmanoff/DropdownTransition/tree/master/DropdownTransitionExample) to the repo.
 
 ## Support
 
